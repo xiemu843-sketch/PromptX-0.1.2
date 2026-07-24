@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "PromptX",
+  "description": "Pick or crop webpage images and generate reusable AI image prompts.",
+  "version": "0.1.2",
+  "action": {
+    "default_title": "PromptX",
+    "default_icon": {
+      "16": "src/assets/icon16.png",
+      "32": "src/assets/icon32.png",
+      "48": "src/assets/icon48.png",
+      "128": "src/assets/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "icons": {
+    "16": "src/assets/icon16.png",
+    "32": "src/assets/icon32.png",
+    "48": "src/assets/icon48.png",
+    "128": "src/assets/icon128.png"
+  },
+  "options_page": "src/options/options.html",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "sidePanel",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  }
+}

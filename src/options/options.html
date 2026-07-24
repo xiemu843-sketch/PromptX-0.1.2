@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PromptX 设置</title>
+    <link rel="stylesheet" href="./options.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel">
+        <header>
+          <h1>PromptX 设置</h1>
+          <p>配置可自定义的 chat/completions API、模型和 API Key。</p>
+        </header>
+
+        <form id="settingsForm">
+          <label>
+            <span>API URL</span>
+            <input id="apiUrl" type="url" autocomplete="off" required>
+          </label>
+
+          <label>
+            <span>模型名</span>
+            <input id="model" type="text" autocomplete="off" required>
+          </label>
+
+          <label>
+            <span>API Key</span>
+            <div class="key-row">
+              <input id="apiKey" type="password" autocomplete="off" placeholder="sk-...">
+              <button id="toggleKeyButton" type="button">显示</button>
+            </div>
+          </label>
+
+          <div class="two-cols">
+            <label>
+              <span>最大输出 Tokens</span>
+              <input id="maxTokens" type="number" min="64" max="4000" step="1">
+            </label>
+
+            <label>
+              <span>Temperature</span>
+              <input id="temperature" type="number" min="0" max="1" step="0.1">
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="saveButton" class="primary" type="submit">保存配置</button>
+            <button id="testButton" type="button">测试连接</button>
+            <button id="resetButton" type="button">恢复默认</button>
+            <button id="clearButton" type="button">清空 Key</button>
+          </div>
+        </form>
+
+        <p id="statusText" class="status" role="status"></p>
+
+        <section class="note">
+          <h2>安全说明</h2>
+          <p>当前 MVP 把 API Key 保存在 Edge 扩展本地存储中，不会写入源码。正式产品建议改为账号登录和后端代理，模型 Key 只保存在服务端。</p>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

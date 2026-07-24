@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PromptX</title>
+    <link rel="stylesheet" href="./popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div class="brand">
+          <div class="mark"><img src="../assets/icon32.png" alt=""></div>
+          <div>
+            <h1>PromptX</h1>
+            <p id="accountStatus">未配置 API Key</p>
+          </div>
+        </div>
+        <button id="settingsButton" class="icon-button" type="button" title="设置" aria-label="设置">⚙</button>
+      </header>
+
+      <section class="actions" aria-label="图片选择">
+        <button id="pickButton" class="primary-button" type="button">点选图片</button>
+        <button id="areaButton" class="secondary-button" type="button">截选区域</button>
+      </section>
+
+      <section class="control-grid" aria-label="提示词选项">
+        <div class="control-row">
+          <span>提示词模式</span>
+          <div class="segment" role="group" aria-label="提示词模式">
+            <button class="segment-button active" type="button" data-mode="concise">简洁</button>
+            <button class="segment-button" type="button" data-mode="detailed">详细</button>
+          </div>
+        </div>
+        <div class="control-row">
+          <span>语言</span>
+          <div class="segment" role="group" aria-label="语言">
+            <button class="segment-button" type="button" data-language="zh">中文</button>
+            <button class="segment-button active" type="button" data-language="en">English</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="status-card">
+        <span class="label">状态</span>
+        <strong id="statusText">请选择图片或截选区域</strong>
+      </section>
+
+      <section class="result-section">
+        <textarea id="resultText" readonly placeholder="生成后的一段完整提示词会显示在这里。"></textarea>
+        <button id="copyButton" class="copy-button" type="button" disabled>复制提示词</button>
+      </section>
+
+      <section class="history-section">
+        <div class="history-title">最近记录</div>
+        <div id="historyList" class="history-list">
+          <p class="empty">暂无记录</p>
+        </div>
+      </section>
+
+      <footer class="author-note">
+        插件作者github主页：<a href="https://github.com/xiemu843-sketch/PromptX-0.1.2" target="_blank" rel="noreferrer">xiemu843-sketch/PromptX-0.1.2</a>
+      </footer>
+    </main>
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>
